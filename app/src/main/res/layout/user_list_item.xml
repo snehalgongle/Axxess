@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="base"
+            type="com.snake.implimetations.data.model.api.Base" />
+
+        <variable
+            name="data"
+            type="com.snake.implimetations.data.model.api.Data" />
+
+        <variable
+            name="viewModel"
+            type="com.snake.implimetations.ui.main.MainViewModel" />
+
+        <variable
+            name="listModel"
+            type="com.snake.implimetations.ui.main.MainListViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="4dp"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:imageUrl="@{base.data.size() > 0 ? data.images.get(0).link : null}" />
+
+            <!--            <TextView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_gravity="center"-->
+            <!--                android:text="@{set.title}"/>-->
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
